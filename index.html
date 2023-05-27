@@ -12,10 +12,10 @@
           <input id="name" placeholder="Nome Completo" type="text" tabindex="1" required autofocus>
         </fieldset>
         <fieldset>
-          <input id="email" placeholder="E-mail" type="email" tabindex="2" required>
+          <input id="email" placeholder="E-mail" type="email" tabindex="2" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
         </fieldset>
         <fieldset>
-          <input id="company" placeholder="Celular" type="text" tabindex="3">
+          <input id="company" placeholder="Celular" type="text" tabindex="3" class="masked">
         </fieldset>
         <fieldset>
           <input id="terms" type="checkbox" required>
@@ -29,4 +29,20 @@
     <hr>
        
     <script src="./js/meraki.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.6/jquery.inputmask.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('.masked').inputmask({
+            mask: ['(99) 9999-9999', '(99) 99999-9999'],
+            greedy: false,
+            definitions: {
+                '#': {
+                    validator: "[0-9]",
+                    cardinality: 1
+                }
+            }
+        });
+    });
+</script>
 </html>
