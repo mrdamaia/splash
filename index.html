@@ -27,16 +27,16 @@ LICENSE: MIT
     <div class="container">  
       
       <form id="loginForm" action="#">
-        <center><a href="http://developers.meraki.com"><img src="./img/meraki-logo.png" width="50%"/></a></center>
+        <center><a href="http://www.berlanda.com.br"><img src="./img/logo-ber.png" width="50%"/></a></center>
         <br>
         <fieldset>
-          <input id="name" placeholder="Your name" type="text" tabindex="1" required autofocus>
+          <input id="name" placeholder="Nome Completo" type="text" tabindex="1" required autofocus>
         </fieldset>
         <fieldset>
-          <input id="email" placeholder="Your Email Address" type="email" tabindex="2" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
+          <input id="email" placeholder="E-mail" type="email" tabindex="2" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
         </fieldset>
         <fieldset>
-          <input id="company" placeholder="Your Company (optional)" type="text" tabindex="3">
+          <input id="celular" placeholder="Celular" type="text" tabindex="3" class="masked">
         </fieldset>      
         <br>
         <fieldset>
@@ -46,9 +46,8 @@ LICENSE: MIT
         <br>
  
         <fieldset>
-          <button type="submit" >Log in to WiFi</button>
+          <button type="submit" >Conectar-se a WiFi</button>
         </fieldset>
-        <p class="copyright">Sample by <a href="http://www.InternetOfLEGO.com" target="_blank" title="Internet of LEGO">Internet of LEGO</a></p>
       </form>
     </div>
     <hr>
@@ -60,4 +59,20 @@ LICENSE: MIT
     <p><label>Access Point MAC: </label><label id="nodeMAC"></label></p>
         
     <script src="./js/meraki.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.6/jquery.inputmask.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.masked').inputmask({
+                mask: ['(99) 9999-9999', '(99) 99999-9999'],
+                greedy: false,
+                definitions: {
+                    '#': {
+                        validator: "[0-9]",
+                        cardinality: 1
+                    }
+                }
+            });
+        });
+    </script>
 </html>
