@@ -30,20 +30,4 @@
     </div>
     <hr>
     <script src="./js/meraki.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.6/jquery.inputmask.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('.masked').inputmask({
-                mask: ['(99) 9999-9999', '(99) 99999-9999'],
-                greedy: false,
-                definitions: {
-                    '#': {
-                        validator: "[0-9]",
-                        cardinality: 1
-                    }
-                }
-            });
-        });
-    </script>
 </html>
