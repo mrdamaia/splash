@@ -33,11 +33,18 @@ LICENSE: MIT
           <input id="name" placeholder="Your name" type="text" tabindex="1" required autofocus>
         </fieldset>
         <fieldset>
-          <input id="email" placeholder="Your Email Address" type="email" tabindex="2" required>
+          <input id="email" placeholder="Your Email Address" type="email" tabindex="2" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
         </fieldset>
         <fieldset>
           <input id="company" placeholder="Your Company (optional)" type="text" tabindex="3">
+        </fieldset>      
+        <br>
+        <fieldset>
+          <input id="terms" type="checkbox" required>
+          <label for="terms">Aceito os termos de uso</label>
         </fieldset>
+        <br>
+ 
         <fieldset>
           <button type="submit" >Log in to WiFi</button>
         </fieldset>
